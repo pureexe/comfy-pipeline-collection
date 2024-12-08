@@ -1,6 +1,6 @@
 {
-  "last_node_id": 26,
-  "last_link_id": 74,
+  "last_node_id": 27,
+  "last_link_id": 75,
   "nodes": [
     {
       "id": 9,
@@ -14,7 +14,7 @@
         "1": 396.68939208984375
       },
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -30,29 +30,6 @@
       ]
     },
     {
-      "id": 17,
-      "type": "Note",
-      "pos": {
-        "0": -58,
-        "1": -44
-      },
-      "size": {
-        "0": 469.9652099609375,
-        "1": 268.08636474609375
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "Prompt taken from https://civitai.com/images/27185516\n\nLoRA Taken from:\nhttps://civitai.com/models/594479/pony-and-15-seras-ashrain-or-failure-frame"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 26,
       "type": "LoraLoader",
       "pos": {
@@ -64,7 +41,7 @@
         "1": 126
       },
       "flags": {},
-      "order": 3,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -116,7 +93,7 @@
         "1": 46
       },
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -127,7 +104,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 8
+          "link": 75
         }
       ],
       "outputs": [
@@ -157,7 +134,7 @@
         "1": 126
       },
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -210,7 +187,7 @@
         "1": 58
       },
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -249,7 +226,7 @@
         "1": 126
       },
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -302,7 +279,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -336,7 +313,7 @@
         "1": 262
       },
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -384,54 +361,6 @@
       ]
     },
     {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": {
-        "0": -922,
-        "1": 446
-      },
-      "size": {
-        "0": 315,
-        "1": 98
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            63
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            64
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            8
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "revEnginePonyxl_v10.safetensors"
-      ]
-    },
-    {
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": {
@@ -443,7 +372,7 @@
         "1": 180.6060791015625
       },
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -481,7 +410,7 @@
         "1": 164.31304931640625
       },
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -506,17 +435,110 @@
       "widgets_values": [
         "score_9, score_8_up, score_7_up, score_6_up, <lora:hf_XL_lightning_8step:0.7:lbw=1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1>,<lora:hf_XL_GlowNeon_v1:0.8:lbw=1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1>,glowing,<lora:XLP_精灵Seras_Ashrain__Failure_Frame:0.8>\n1girl, pointy ears, without shoes, spread white tender bare legs, cum, open pussy, blue eyes, lying, on back, blonde hair, long hair, large breasts, cleavage, elf, navel, cape, pelvic curtain, gloves, bangs, shiny skin,wet,"
       ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": -554,
+        "1": 382
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            63
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            64
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "revEnginePonyxl_v10.safetensors"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "VAELoader",
+      "pos": {
+        "0": -173,
+        "1": 307
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            75
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxlVAE_sdxlVAE.safetensors"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Note",
+      "pos": {
+        "0": -58,
+        "1": -44
+      },
+      "size": {
+        "0": 469.9652099609375,
+        "1": 268.08636474609375
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Prompt taken from https://civitai.com/images/27185516\n\nLoRA Taken from:\nhttps://civitai.com/models/594479/pony-and-15-seras-ashrain-or-failure-frame\n\n# Need to apply VAE FIXED FROM \nhttps://civitai.com/models/296576/sdxl-vae"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
-    [
-      8,
-      4,
-      2,
-      8,
-      1,
-      "VAE"
-    ],
     [
       9,
       8,
@@ -636,16 +658,24 @@
       3,
       0,
       "MODEL"
+    ],
+    [
+      75,
+      27,
+      0,
+      8,
+      1,
+      "VAE"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1167815779424768,
+      "scale": 0.7627768444385489,
       "offset": [
-        -237.8925919370193,
-        80.82513807716452
+        301.4231268809714,
+        186.1232447235748
       ]
     }
   },
