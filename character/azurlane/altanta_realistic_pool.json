@@ -1,0 +1,613 @@
+{
+  "last_node_id": 29,
+  "last_link_id": 91,
+  "nodes": [
+    {
+      "id": 26,
+      "type": "LoraLoader",
+      "pos": {
+        "0": -431,
+        "1": 701
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 63
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            61
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "sdxl_lightning_8step_lora.safetensors",
+        0.8,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 1434,
+        "1": 69
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 32
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 91
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "Note",
+      "pos": {
+        "0": -58,
+        "1": -44
+      },
+      "size": {
+        "0": 469.9652099609375,
+        "1": 268.08636474609375
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Prompt taken from https://civitai.com/images/27185516\n\nLoRA Taken from:\nhttps://civitai.com/models/594479/pony-and-15-seras-ashrain-or-failure-frame\n\n# Need to apply VAE FIXED FROM \nhttps://civitai.com/models/296576/sdxl-vae"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 25,
+      "type": "LoraLoader",
+      "pos": {
+        "0": -202,
+        "1": 557
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 61
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            79
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "sdxl_lightning_8step_lora.safetensors",
+        0.8,
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 527,
+        "1": 475
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            90
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1360,
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "type": "VAELoader",
+      "pos": {
+        "0": 118,
+        "1": 422
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            91
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxlVAE_sdxlVAE.safetensors"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CLIPSetLastLayer",
+      "pos": {
+        "0": 456,
+        "1": 217
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            88,
+            89
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -2
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": -820,
+        "1": 397
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            63,
+            85
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            64
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "revEnginePonyxl_v10.safetensors"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 820,
+        "1": 597
+      },
+      "size": {
+        "0": 425.27801513671875,
+        "1": 180.6060791015625
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 89
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            57
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "simple background,score_6,score_5,score_4,source_pony,\njpeg artifacts,(cropped image),mangled hands,bad fingers,6 fingers,bad proportions,(blurry:1.3),blurred composition,low resolution,bad,ugly,bad composition,terrible,render,flat,worst quality,low quality,normal quality,lowres,inaccurate limb,extra fingers,fewer fingers,missing fingers,extra arms,extra legs,inaccurate eyes,bad composition,bad anatomy,extra digit,fewer digits,cinnadust,cropped,low res,extra digit,fewer digits,((muscular female)),(footwear),blurred composition, blurry foreground,blurry background,ImgFixerPre0.3,negativeXL_D, (footwear), crown, anime, drawing, Anime, cartoon, manga, stylized, illustration, 2D, cel-shading, zPDXL2-neg\n"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": {
+        "0": 1164,
+        "1": 474
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 85
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 56
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 57
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 90
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        40328891934943,
+        "randomize",
+        20,
+        5,
+        "euler_ancestral",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1499,
+        "1": 54
+      },
+      "size": {
+        "0": 421.0028381347656,
+        "1": 396.68939208984375
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 765,
+        "1": -87
+      },
+      "size": {
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "score_9, score_8_up, score_7_up, score_6_up,  1girl, simple background, ahoge, asymmetrical legwear, black footwear, black ribbon, blue eyes, blue skirt, braid, crown braid, detached collar, hair ornament, hair ribbon, black hairclip, single black hair clip, miniskirt, necktie, off-shoulder shirt, off shoulder, pink hair, pleated skirt, red necktie, ribbon, shirt, shoes, sidelocks, single thighhigh, skirt, sleeveless, sleeveless shirt, small breasts, white shirt, white socks, white thighhighs, elbow gloves, gloves, \nfingerless gloves, long hair, seifuku, best quality, photorealistic, photography, cosplay, realistic lighting, ultra-realistic, 4K resolution, professional photography, DSLR, aperture f/1.8, 50mm lens, studio lighting, golden hour, High resolution, photorealistic, volumetric lighting, ultra-realistic, pink hair, (nude)1.5, bare shoulders, poolside, pool, wet, cowboy shot, outdoors, looking at viewer, blue sky, sunbeam, depth of field, cameltoe, covered nipples, collar bone"
+      ]
+    }
+  ],
+  "links": [
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      56,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      57,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      61,
+      26,
+      0,
+      25,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      26,
+      1,
+      25,
+      1,
+      "CLIP"
+    ],
+    [
+      63,
+      4,
+      0,
+      26,
+      0,
+      "MODEL"
+    ],
+    [
+      64,
+      4,
+      1,
+      26,
+      1,
+      "CLIP"
+    ],
+    [
+      79,
+      25,
+      1,
+      19,
+      0,
+      "CLIP"
+    ],
+    [
+      85,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      88,
+      19,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      89,
+      19,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      90,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      91,
+      27,
+      0,
+      8,
+      1,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.9784466890013575,
+      "offset": [
+        -896.7205857731961,
+        -68.03186995053885
+      ]
+    }
+  },
+  "version": 0.4
+}
