@@ -20,6 +20,7 @@
         {
           "name": "model",
           "type": "MODEL",
+          "link": 63
         },
         {
           "name": "clip",
