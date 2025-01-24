@@ -1,0 +1,562 @@
+{
+  "last_node_id": 32,
+  "last_link_id": 83,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1209,
+        188
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 22,
+      "type": "Note",
+      "pos": [
+        -735.4631958007812,
+        62.969879150390625
+      ],
+      "size": [
+        322.74542236328125,
+        168.85269165039062
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        ", nude, open shirt, 1man, rape, having sex, cum dipping, nipple\n\n\n, torogao, condom, :o, large breasts, collarbone, nipples,bouncing breasts,  navel, trembling, speed lines,pussy juice,on back, 1boy, aether_(genshin_impact), penis\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        -315.9433288574219,
+        40.72258377075195
+      ],
+      "size": [
+        389.4872131347656,
+        151.37271118164062
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "masterpiece,best quality,newest,absurdres,highres, 1girl, beautiful face, detailed eyes,slim body,mature female, front view, from below, cowboy shot, dutch angle, black hair,blunt bang,long hair, straight hair, red eyes, blush, heavy breathing, looking at viewer, torogao, ,condom, :o, large breasts, collarbone, nipples,bouncing breasts, open shirt,white serafuku,long sleeves,blue sailor collar,red neckerchief, navel, white panties,pantie aside,trembling, speed lines,pussy juice, missionary,on back, 1boy, penis, simple background ,bed,\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 31,
+      "type": "LoraLoader",
+      "pos": [
+        -624.89599609375,
+        549.3731079101562
+      ],
+      "size": [
+        315,
+        126
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 78
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            79
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            80
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Charlotte_v1-000010.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 32,
+      "type": "LoraLoader",
+      "pos": [
+        -298.3379211425781,
+        589.1004028320312
+      ],
+      "size": [
+        315,
+        126
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 79
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 80
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            81
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            82,
+            83
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "Expressive_H-000001.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1199.417236328125,
+        450.5220642089844
+      ],
+      "size": [
+        286.72686767578125,
+        334.1243591308594
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        100.34086608886719,
+        520.6674194335938
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "bad anatomy, bad proportions, extra limbs, extra digit, extra legs, extra legs and arms, disfigured, missing arms, too many fingers, fused fingers, missing fingers, unclear eyes,watermark,username, multiple_girls, text, watermark, bad eye, monochrome, 3d, simple background, realistic, censored, dim lighting, cabbie hat, red headwear, hat feather,\n"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        831.0468139648438,
+        319.10186767578125
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 81
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        592509885962917,
+        "randomize",
+        30,
+        6,
+        "uni_pc",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -616.7230224609375,
+        351.0697937011719
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            78
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            77
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            47
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "ponyDiffusionV6XL_v6StartWithThisOne.safetensors"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        154.4618377685547,
+        132.765625
+      ],
+      "size": [
+        528.6639404296875,
+        258.3583068847656
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 83
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        " score_9, score_8_up, score_7_up, expressiveh,\n BREAK \nhypnotized, \nBREAK\nsex, vaginal, testicles, penis, grabbing breast hetero, nude, motion lines, motion blur, fucked silly, overwhelmed\nBREAK\n((((faceless man with no mouth in the background, young woman in the front, head slightly tilted back, eyes looking up, subtle upward gaze, serene expression, soft lighting, detailed facial features, girl is suprised))))\nBREAK big breast\ncharlottedef, aqua eyes, pink hair, medium hair, medium breasts, monocle, bare shoulders, white shirt, red skirt, jewelry, blue gemstone, ribbon, sleeveless shirt, red sleeves, white gloves, gem, puffy sleeves, long sleeves, white belt, suspenders, thigh strap"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        411.1514892578125,
+        675.285888671875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            66
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        768,
+        1360,
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      47,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      66,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      77,
+      4,
+      1,
+      31,
+      1,
+      "CLIP"
+    ],
+    [
+      78,
+      4,
+      0,
+      31,
+      0,
+      "MODEL"
+    ],
+    [
+      79,
+      31,
+      0,
+      32,
+      0,
+      "MODEL"
+    ],
+    [
+      80,
+      31,
+      1,
+      32,
+      1,
+      "CLIP"
+    ],
+    [
+      81,
+      32,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      82,
+      32,
+      1,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      83,
+      32,
+      1,
+      6,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7627768444385503,
+      "offset": [
+        339.2458379289578,
+        -99.36648565939342
+      ]
+    }
+  },
+  "version": 0.4
+}
